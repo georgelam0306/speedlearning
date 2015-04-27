@@ -1,12 +1,14 @@
 var AppView = Backbone.View.extend({
+	childView : null,
 	initialize: function() {
 		console.log("initialize");
+		
 	},
 	render: function()
 	{
-		var memoryView = new MemoryView();
-		var userView = new UserView();
-		var readingView = new ReadingView();
-		return this.$el.html(memoryView.render()).append(userView.render()).append(readingView.render());
+		console.log("render");
+		console.log(this.$el);
+		console.log(this.childView);
+		return this.$el.append(this.childView.$el);
 	}
 });

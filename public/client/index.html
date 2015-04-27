@@ -5,16 +5,18 @@
 	<script src="lib/underscore/underscore-min.js"></script>
 	<script src="lib/backbone/backbone.js"></script>
 	<script src="app/appView.js"></script>
+	
 	<script src="app/user/userView.js"></script>
 	<script src="app/reading/readingView.js"></script>
 	<script src="app/memory/memoryView.js"></script>
+	<script src="app/router.js"></script>
 </head>
 <body>
 Speed Learning for great good
-
-<script>
-	var helloView = new AppView();
-	$('body').append(helloView.render());
-</script>
+<div id="container">test text
+</div>
+<script>var app_router = new AppRouter();
+// Start Backbone history a necessary step for bookmarkable URL's
+Backbone.history.start();</script>
 </body>
 </html>
