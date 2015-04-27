@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
     nodemon: {
       dev: {
-        script: 'speedlearning.js'
+        script: 'server.js'
       }
     },
 
