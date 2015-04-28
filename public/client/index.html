@@ -9,13 +9,46 @@
 	<script src="app/user/userView.js"></script>
 	<script src="app/reading/readingView.js"></script>
 	<script src="app/memory/memoryView.js"></script>
-	<script src="app/router.js"></script>
+    <script src="app/router.js"></script>
+    <script src="app/loginView.js"></script>
+	<script src="app/signUpView.js"></script>
 </head>
 <body>
 Speed Learning for great good
+<script type="text/template" id="login_template">
+<form action="/api/login" method="post">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username"/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <input type="submit" value="Log In"/>
+    </div>
+</form>
+</script>
+<script type="text/template" id="signup_template">
+<form action="/api/signup" method="post">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username"/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <input type="submit" value="Sign Up"/>
+    </div>
+</form>
+</script>
 <div id="container">test text
 </div>
 <script>var app_router = new AppRouter();
+
 // Start Backbone history a necessary step for bookmarkable URL's
 Backbone.history.start();</script>
 </body>

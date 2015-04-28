@@ -3,12 +3,15 @@ var AppRouter = Backbone.Router.extend({
 	memoryView : null,
 	readingView : null,
 	userView : null,
-
+	signUpView: null,
+	loginView: null,
 	routes : {
 		"reading" : "handleRead",
-		"*actions" : "handleDefault",
-		"login" : "handleLogin"
+		"login" : "handleLogin",
+		"sign" : "handleSignUp",
+		"*actions" : "handleDefault"
 	},
+
 	initialize: function() {
 		this.container = new AppView({el: $('#container')});
 	},
@@ -21,14 +24,27 @@ var AppRouter = Backbone.Router.extend({
 		this.container.render();
 	},
 	handleDefault: function(actions) {
-		if(this.readingView == null)
-			this.readingView = new ReadingView();
+		if(this.userView == null)
+			this.userView = new UserView();
 
-		this.container.childView = this.readingView;
+		this.container.childView = this.userView;
 		this.container.render();
 	},
+
 	handleLogin: function(actions) {
-		console.log(actions);
+		if(this.loginView == null)
+			this.loginView = new LoginView();
+
+		this.container.childView = this.loginView;
+		this.container.render();
+	},
+
+	handleSignUp: function(actions) {
+		if(this.signUpView == null)
+			this.signUpView = new SignUpView();
+
+		this.container.childView = this.signUpView;
+		this.container.render();
 	}
 
 });
