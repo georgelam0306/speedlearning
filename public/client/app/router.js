@@ -6,9 +6,12 @@ var AppRouter = Backbone.Router.extend({
 	userView : null,
 	signUpView: null,
 	loginView: null,
+	chunkingView: null,
+
 	routes : {
 		"readflash" : "handleReadFlash",
 		"readcol" : "handleReadCol",
+		"chunking" : "handleChunking",
 		"login" : "handleLogin",
 		"sign" : "handleSignUp",
 		"*actions" : "handleDefault"
@@ -45,6 +48,14 @@ var AppRouter = Backbone.Router.extend({
 			this.loginView = new LoginView();
 
 		this.container.childView = this.loginView;
+		this.container.render();
+	},
+
+	handleChunking: function(actions) {
+		if(this.chunkingView == null)
+			this.chunkingView = new MemoryView();
+
+		this.container.childView = this.chunkingView;
 		this.container.render();
 	},
 
