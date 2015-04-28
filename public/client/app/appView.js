@@ -6,9 +6,7 @@ var AppView = Backbone.View.extend({
 	},
 	render: function()
 	{
-		console.log("render");
-		console.log(this.$el);
-		console.log(this.childView);
+		this.$el.children().detach();
 		return this.$el.append(this.childView.$el);
 	}
 });

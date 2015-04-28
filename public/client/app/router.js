@@ -2,11 +2,13 @@ var AppRouter = Backbone.Router.extend({
 	container : null,
 	memoryView : null,
 	readingView : null,
+	readingColView : null,
 	userView : null,
 	signUpView: null,
 	loginView: null,
 	routes : {
-		"reading" : "handleRead",
+		"readflash" : "handleReadFlash",
+		"readcol" : "handleReadCol",
 		"login" : "handleLogin",
 		"sign" : "handleSignUp",
 		"*actions" : "handleDefault"
@@ -16,11 +18,18 @@ var AppRouter = Backbone.Router.extend({
 		this.container = new AppView({el: $('#container')});
 	},
 
-	handleRead: function(actions) {
+	handleReadFlash: function(actions) {
 		if(this.readingView == null)
 			this.readingView = new ReadingView();
 
 		this.container.childView = this.readingView;
+		this.container.render();
+	},
+	handleReadCol: function(actions) {
+		if(this.readingColView == null)
+			this.readingColView = new ReadingColumnView();
+
+		this.container.childView = this.readingColView;
 		this.container.render();
 	},
 	handleDefault: function(actions) {

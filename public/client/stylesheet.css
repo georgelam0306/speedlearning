@@ -1,0 +1,25 @@
+.columnize {
+    -moz-column-count: 3;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
+    width: 560px;
+}
+
+table {
+    /* cellspacing */
+    border-spacing: 20;
+    width: 100%;
+}
+th {
+    /* This covers the th elements */
+}
+tr {
+    /* This covers the tr elements */
+}
+th, td {
+    /* cellpadding */
+    padding: 0;
+}
