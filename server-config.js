@@ -5,6 +5,7 @@ var passport = require('passport');
 var auth = require('./server/authentication/authentication.js');
 var session = require('express-session');
 var db = require('./server/database/config.js');
+fs = require('fs')
 
 var app = express();
 app.use(session({secret: 'superlearningsecret'}));
@@ -45,6 +46,22 @@ app.post('/api/authenticated', function(req, res, next)
   } else { 
   	res.send(403);
 	}
+});
+
+app.post('/api/book', function(req, res, next)
+{
+  fs.readFile('./server/content/test.txt', 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    res.send(200, data);
+  });
+});
+
+app.get('/#/readflash', restrict, function(req, res, next)
+{
+  console.log("continue");
+  next();
 });
 
 app.use(express.static(__dirname + '/public/client'));

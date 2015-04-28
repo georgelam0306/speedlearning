@@ -8,6 +8,50 @@
     width: 560px;
 }
 
+.navbar {
+    position:fixed;
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: rgb(67, 121, 131);
+}
+
+.inactive {
+    color: gray;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16;
+
+}
+
+.active {
+    color: black;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16;
+
+}
+
+.wordflash {
+    color: black;
+    font-family: 'PT Sans Narrow', sans-serif;
+    text-align: center;
+    vertical-align: center;
+    font-size: 24;
+}
+
+#container {
+    display: block;
+    width: 80%;
+    float : right;
+    margin-left: 150px
+}
+
+h1 {
+    color: black;
+    font-family: 'PT Sans Narrow', sans-serif;
+    text-align: center;
+
+}
+
 table {
     /* cellspacing */
     border-spacing: 20;

@@ -4,7 +4,7 @@ var UserView = Backbone.View.extend({
 		this.render();
 	},
 	render: function() {
-		console.log("rendering user view");
+		
 		return this.$el.html("user view");
 	}
 })
